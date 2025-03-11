@@ -20,12 +20,7 @@ usersRouter.post('/', async (request, response) => {
   })
 
   const savedUser = await user.save()
-
-  if(savedUser){
-    response.status(201).json(savedUser)
-  } else {
-    response.status(400).send('expected `username` to be unique')
-  }
+  response.status(200).json(savedUser)
 })
 
 module.exports = usersRouter
